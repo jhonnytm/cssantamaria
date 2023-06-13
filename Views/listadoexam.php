@@ -1,0 +1,17 @@
+<?php session_start();
+
+include_once('menu/header.php');
+
+if (!isset($_SESSION['nombre'])) {
+    header('Location: ../index.php');
+} elseif (isset($_SESSION['nombre'])) {
+    include_once('menu/menu.php');
+    include_once('../Config/Conexion2.php');
+} else {
+    echo "Error en el sistema";
+    die();
+} ?>
+<div class="container">
+    <h2>Exámenes de Laboratorio</h2>
+</div>
+<?php include_once('menu/footer.php'); ?>
